@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50C49EF11A7831710010C199 /* AwfulBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C49EF01A7831710010C199 /* AwfulBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50C49EF71A7831710010C199 /* AwfulBinding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C49EEB1A7831710010C199 /* AwfulBinding.framework */; };
+		50C49EFE1A7831710010C199 /* AwfulBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C49EFD1A7831710010C199 /* AwfulBindingTests.swift */; };
+		50C49F131A7831890010C199 /* BindableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C49F101A7831890010C199 /* BindableValue.swift */; };
+		50C49F141A7831890010C199 /* BindableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C49F111A7831890010C199 /* BindableArray.swift */; };
+		50C49F151A7831890010C199 /* PBindableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C49F121A7831890010C199 /* PBindableCollection.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50C49EF81A7831710010C199 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50C49EE21A7831710010C199 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50C49EEA1A7831710010C199;
+			remoteInfo = AwfulBinding;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		50C49EEB1A7831710010C199 /* AwfulBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AwfulBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C49EEF1A7831710010C199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C49EF01A7831710010C199 /* AwfulBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwfulBinding.h; sourceTree = "<group>"; };
+		50C49EF61A7831710010C199 /* AwfulBindingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwfulBindingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C49EFC1A7831710010C199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C49EFD1A7831710010C199 /* AwfulBindingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwfulBindingTests.swift; sourceTree = "<group>"; };
+		50C49F101A7831890010C199 /* BindableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableValue.swift; sourceTree = "<group>"; };
+		50C49F111A7831890010C199 /* BindableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableArray.swift; sourceTree = "<group>"; };
+		50C49F121A7831890010C199 /* PBindableCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBindableCollection.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50C49EE71A7831710010C199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C49EF31A7831710010C199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C49EF71A7831710010C199 /* AwfulBinding.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50C49EE11A7831710010C199 = {
+			isa = PBXGroup;
+			children = (
+				50C49EED1A7831710010C199 /* AwfulBinding */,
+				50C49EFA1A7831710010C199 /* AwfulBindingTests */,
+				50C49EEC1A7831710010C199 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50C49EEC1A7831710010C199 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50C49EEB1A7831710010C199 /* AwfulBinding.framework */,
+				50C49EF61A7831710010C199 /* AwfulBindingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50C49EED1A7831710010C199 /* AwfulBinding */ = {
+			isa = PBXGroup;
+			children = (
+				50C49F101A7831890010C199 /* BindableValue.swift */,
+				50C49F111A7831890010C199 /* BindableArray.swift */,
+				50C49F121A7831890010C199 /* PBindableCollection.swift */,
+				50C49EF01A7831710010C199 /* AwfulBinding.h */,
+				50C49EEE1A7831710010C199 /* Supporting Files */,
+			);
+			path = AwfulBinding;
+			sourceTree = "<group>";
+		};
+		50C49EEE1A7831710010C199 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50C49EEF1A7831710010C199 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50C49EFA1A7831710010C199 /* AwfulBindingTests */ = {
+			isa = PBXGroup;
+			children = (
+				50C49EFD1A7831710010C199 /* AwfulBindingTests.swift */,
+				50C49EFB1A7831710010C199 /* Supporting Files */,
+			);
+			path = AwfulBindingTests;
+			sourceTree = "<group>";
+		};
+		50C49EFB1A7831710010C199 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50C49EFC1A7831710010C199 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		50C49EE81A7831710010C199 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C49EF11A7831710010C199 /* AwfulBinding.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		50C49EEA1A7831710010C199 /* AwfulBinding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50C49F011A7831710010C199 /* Build configuration list for PBXNativeTarget "AwfulBinding" */;
+			buildPhases = (
+				50C49EE61A7831710010C199 /* Sources */,
+				50C49EE71A7831710010C199 /* Frameworks */,
+				50C49EE81A7831710010C199 /* Headers */,
+				50C49EE91A7831710010C199 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AwfulBinding;
+			productName = AwfulBinding;
+			productReference = 50C49EEB1A7831710010C199 /* AwfulBinding.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		50C49EF51A7831710010C199 /* AwfulBindingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50C49F041A7831710010C199 /* Build configuration list for PBXNativeTarget "AwfulBindingTests" */;
+			buildPhases = (
+				50C49EF21A7831710010C199 /* Sources */,
+				50C49EF31A7831710010C199 /* Frameworks */,
+				50C49EF41A7831710010C199 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50C49EF91A7831710010C199 /* PBXTargetDependency */,
+			);
+			name = AwfulBindingTests;
+			productName = AwfulBindingTests;
+			productReference = 50C49EF61A7831710010C199 /* AwfulBindingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50C49EE21A7831710010C199 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Scal.io;
+				TargetAttributes = {
+					50C49EEA1A7831710010C199 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					50C49EF51A7831710010C199 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 50C49EE51A7831710010C199 /* Build configuration list for PBXProject "AwfulBinding" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50C49EE11A7831710010C199;
+			productRefGroup = 50C49EEC1A7831710010C199 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50C49EEA1A7831710010C199 /* AwfulBinding */,
+				50C49EF51A7831710010C199 /* AwfulBindingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50C49EE91A7831710010C199 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C49EF41A7831710010C199 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50C49EE61A7831710010C199 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C49F141A7831890010C199 /* BindableArray.swift in Sources */,
+				50C49F131A7831890010C199 /* BindableValue.swift in Sources */,
+				50C49F151A7831890010C199 /* PBindableCollection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C49EF21A7831710010C199 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C49EFE1A7831710010C199 /* AwfulBindingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50C49EF91A7831710010C199 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50C49EEA1A7831710010C199 /* AwfulBinding */;
+			targetProxy = 50C49EF81A7831710010C199 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		50C49EFF1A7831710010C199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50C49F001A7831710010C199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50C49F021A7831710010C199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AwfulBinding/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		50C49F031A7831710010C199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AwfulBinding/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		50C49F051A7831710010C199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AwfulBindingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		50C49F061A7831710010C199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AwfulBindingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50C49EE51A7831710010C199 /* Build configuration list for PBXProject "AwfulBinding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C49EFF1A7831710010C199 /* Debug */,
+				50C49F001A7831710010C199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50C49F011A7831710010C199 /* Build configuration list for PBXNativeTarget "AwfulBinding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C49F021A7831710010C199 /* Debug */,
+				50C49F031A7831710010C199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50C49F041A7831710010C199 /* Build configuration list for PBXNativeTarget "AwfulBindingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C49F051A7831710010C199 /* Debug */,
+				50C49F061A7831710010C199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50C49EE21A7831710010C199 /* Project object */;
+}
