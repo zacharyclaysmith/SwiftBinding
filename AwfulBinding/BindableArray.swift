@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BindableArray<T:Equatable> : PBindableCollection{
+public class BindableArray<T> : PBindableCollection{
     private var _internalArray:[T]
     private var _changedListeners:Dictionary<NSObject, () -> Void>
     private var _indexChangedListeners:Dictionary<NSObject, ((indexChanged:Int) -> Void)>
