@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BindableValue<T:Equatable>{
+public class BindableValue<T>{
     private var _value:T?
     private var _changeListeners:Dictionary<NSObject, ((T?) -> Void)>
     
@@ -18,12 +18,9 @@ public class BindableValue<T:Equatable>{
         }
         
         set(newValue){
-            if(_value != newValue)
-            {
-                _value = newValue
-                
-                alertChangeListener()
-            }
+            _value = newValue
+            
+            alertChangeListener()
         }
     }
     
