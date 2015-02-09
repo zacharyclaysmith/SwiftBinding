@@ -95,7 +95,6 @@ Viewers like you.
 
 ## License
 
-TODO: Write license
-]]></content>
-<tabTrigger>readme</tabTrigger>
+MIT
+</content>
 </snippet>
