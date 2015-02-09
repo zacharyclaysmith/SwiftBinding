@@ -1,32 +1,83 @@
 <snippet>
-<content><![CDATA[
+<content>
 # ${1:Project Name}
 
-TODO: Write a project description
+This is an awfully simplistic "binding framework" written in Swift. There's nothing super special or tricky about it...it's just glorified object wrappers that call listener functions when the values change.'
 
 ## Installation
 
-TODO: Describe the installation process
+1. Carthage
+  * Add `github "zacharyclaysmith/AwfulBinding"` to your Cartfile
+  * Run `carthage update`
+2. CocoaPods
+*Not yet supported*
+3. Manual Installation
+Just pull down the repo and build it, then include the framework in your project.
 
 ## Usage
 
-TODO: Write usage instructions
+### BindableValue<T>
 
-## Contributing
+`BindableValue<T>` has a generic property called `value` and a function called `addListener`. Any listeners added through the `addListener` function are called whenever `value` is changed.
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+```
+func addListener_example(){
+    let someBindableString = BindableValue<String>(initialValue:"test")
+
+    someBindableString.addListener(self, listener: someListener)
+
+    someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
+}
+
+func someListener(value:String){
+    //DO SOMETHING
+}
+```
+
+```
+func alertNow_example(){
+    let someBindableString = BindableValue<String>(initialValue:"test")
+
+    someBindableString.addListener(self, listener: someListener, alertNow:true) //EFFECT: someListener is called with a value of "test"
+
+    someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
+}
+
+func someListener(value:String){
+    //DO SOMETHING
+}
+```
+
+```
+func removeListener_example(){
+    let someBindableString = BindableValue<String>(initialValue:"test")
+
+    someBindableString.addListener(self, listener: someListener, alertNow:true) //EFFECT: someListener is called with a value of "test"
+
+    someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
+
+    someBindableString.removeListener(self)
+
+    someBindableString.value = "anotherValue"  //EFFECT: someListener is NOT called.
+}
+
+func someListener(value:String){
+    //DO SOMETHING
+}
+```
+
+### BindableArray<T>
+
 
 ## History
 
-TODO: Write history
+I wanted a simple binding framework for iOS/Swift, so I started this. It's proven itself pretty useful. I've used several binding frameworks over the year and have learned that basic value and array support are really all you need, plus some UI sugar on top (see https://github.com/zacharyclaysmith/AwfulBindingUI for that mess).
+
+I don't consider this library complete or well tested, yet, but it's functional and a good starting point. I'd like to keep it as simple as possible, however, and build other libraries around it.
 
 ## Credits
 
-TODO: Write credits
+Viewers like you.
 
 ## License
 
