@@ -1,8 +1,8 @@
 <snippet>
 <content>
-# ${1:Project Name}
+# AwfulBinding
 
-This is an awfully simplistic "binding framework" written in Swift. There's nothing super special or tricky about it...it's just glorified object wrappers that call listener functions when the values change.'
+This is a terribly simplistic "binding framework" written in Swift. There's nothing super special about it...it's just glorified object wrappers that call listener functions when the values change.
 
 ## Installation
 
@@ -68,6 +68,20 @@ func someListener(value:String){
 
 ### BindableArray<T>
 
+```
+func addIndexChangedListener_example(){
+    let bindableArray = BindableArray<String>(initialArray:[])
+
+    bindableArray.addIndexChangedListener(self, listener:someListener)
+
+    bindableArray.append("someString") //EFFECT: someListener is called
+}
+
+func someListener(index:Int){
+    //DO SOMETHING
+}
+
+```
 
 ## History
 
