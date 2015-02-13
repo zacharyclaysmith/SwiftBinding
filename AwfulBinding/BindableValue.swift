@@ -44,13 +44,13 @@ public class BindableValue<ValueType>:PUpdateable{
         _changeListeners.removeValueForKey(owner)
     }
     
-    private func alertChangeListeners(){
+    internal func alertChangeListeners(){
         for changeListener in _changeListeners.values{
             changeListener(_value)
         }
     }
     
-    private func alertAnyUpdateListeners(){
+    internal func alertAnyUpdateListeners(){
         for anyUpdateListener in _anyUpdateListeners.values{
             anyUpdateListener()
         }
