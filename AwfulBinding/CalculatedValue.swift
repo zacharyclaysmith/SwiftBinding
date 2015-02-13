@@ -1,37 +1,49 @@
 //
-//  BindableValue.swift
-//  ARWorld
+//  CalculatedValue.swift
+//  AwfulBinding
 //
-//  Created by Zachary Smith on 12/22/14.
-//  Copyright (c) 2014 Scal.io. All rights reserved.
+//  Created by Zachary Smith on 2/13/15.
+//  Copyright (c) 2015 Scal.io. All rights reserved.
 //
 
 import Foundation
 
-public class BindableValue<ValueType>:PUpdateable{
+public class CalculatedValue<ValueType>:PUpdateable{
+    private let _listenerOwner:NSObject = NSObject()
+    
     private var _value:ValueType?
     private var _changeListeners:Dictionary<NSObject, ((ValueType?) -> Void)>
+    
     private var _anyUpdateListeners:Dictionary<NSObject, (() -> Void)>
     
-    public var value:ValueType?{
-        get{
-            return _value
-        }
+    public var value:ValueType?{return _value}
+    
+    private func calculateValue(){
+        _value = calculator(_boundValues)
         
-        set(newValue){
-            _value = newValue
-            
-            alertChangeListeners()
-            alertAnyUpdateListeners()
+        alertChangeListeners()
+        alertAnyUpdateListeners()
+    }
+    
+    public var calculator:([PUpdateable]) -> ValueType
+    
+    private var _boundValues:[PUpdateable]
+    
+    public init(boundValues:[PUpdateable], calculator:([PUpdateable]) -> ValueType){
+        _changeListeners = Dictionary<NSObject, ((ValueType?) -> Void)>()
+        _anyUpdateListeners = Dictionary<NSObject, (() -> Void)>()
+        _boundValues = boundValues
+        self.calculator = calculator
+        
+        for boundValue in boundValues{
+            boundValue.addAnyUpdateListener(_listenerOwner, listener: boundValueUpdated, alertNow: false)
         }
     }
     
-    public init(initialValue:ValueType? = nil){
-        _value = initialValue
-        _changeListeners = Dictionary<NSObject, ((ValueType?) -> Void)>()
-        _anyUpdateListeners = Dictionary<NSObject, (() -> Void)>()
+    private func boundValueUpdated(){
+        calculateValue()
     }
-
+    
     public func addListener(owner:NSObject, listener:(ValueType?) -> Void, alertNow:Bool = false){
         _changeListeners[owner] = listener
         

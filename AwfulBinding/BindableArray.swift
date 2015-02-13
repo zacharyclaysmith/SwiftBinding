@@ -12,6 +12,7 @@ public class BindableArray<T> : PBindableCollection{
     private var _internalArray:[T]
     private var _changedListeners:Dictionary<NSObject, () -> Void>
     private var _indexChangedListeners:Dictionary<NSObject, ((indexChanged:Int) -> Void)>
+    private var _anyUpdateListeners:Dictionary<NSObject, (() -> Void)>
     
     public subscript(index:Int) -> T{
         get{
@@ -22,6 +23,7 @@ public class BindableArray<T> : PBindableCollection{
             _internalArray[index] = newValue
             
             alertIndexChangedListeners(index)
+            alertAnyUpdateListeners()
         }
     }
     
@@ -32,13 +34,15 @@ public class BindableArray<T> : PBindableCollection{
         set(value){
             _internalArray = value
             alertChangedListeners()
+            alertAnyUpdateListeners()
         }
     }
     
-    public init(initialArray:[T]){
+    public init(initialArray:[T] = []){
         _internalArray = initialArray
         _changedListeners = Dictionary<NSObject, () -> Void>()
         _indexChangedListeners = Dictionary<NSObject, (indexChanged:Int) -> Void>()
+        _anyUpdateListeners = Dictionary<NSObject, (() -> Void)>()
     }
     
     public func addIndexChangedListener(owner:NSObject, listener:(indexChanged:Int) -> Void){
@@ -53,22 +57,13 @@ public class BindableArray<T> : PBindableCollection{
         }
     }
     
-    private func alertChangedListeners(){
-        for listener in _changedListeners.values{
-            listener()
-        }
-    }
     
-    private func alertIndexChangedListeners(indexChanged:Int){
-        for listener in _indexChangedListeners.values{
-            listener(indexChanged: indexChanged)
-        }
-    }
     
     public func removeAtIndex(index:Int) -> T{
         let value = _internalArray.removeAtIndex(index)
         
         alertChangedListeners()
+        alertAnyUpdateListeners()
         
         return value
     }
@@ -81,5 +76,36 @@ public class BindableArray<T> : PBindableCollection{
         _internalArray.append(newElement)
         
         alertChangedListeners()
+        alertAnyUpdateListeners()
+    }
+    
+    private func alertChangedListeners(){
+        for listener in _changedListeners.values{
+            listener()
+        }
+    }
+    
+    private func alertIndexChangedListeners(indexChanged:Int){
+        for listener in _indexChangedListeners.values{
+            listener(indexChanged: indexChanged)
+        }
+    }
+    
+    private func alertAnyUpdateListeners(){
+        for anyUpdateListener in _anyUpdateListeners.values{
+            anyUpdateListener()
+        }
+    }
+    
+    public func addAnyUpdateListener(owner:NSObject, listener:() -> Void, alertNow:Bool){
+        _anyUpdateListeners[owner] = listener
+        
+        if(alertNow){
+            listener()
+        }
+    }
+    
+    public func removeAnyUpdateListener(owner:NSObject){
+        _anyUpdateListeners.removeValueForKey(owner)
     }
 }

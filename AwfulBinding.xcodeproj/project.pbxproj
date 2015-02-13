@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50AA32BE1A8EB5EF0073EA6A /* PUpdateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA32BD1A8EB5EF0073EA6A /* PUpdateable.swift */; };
+		50AA32C01A8EB8410073EA6A /* CalculatedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA32BF1A8EB8410073EA6A /* CalculatedValue.swift */; };
 		50C49EF11A7831710010C199 /* AwfulBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C49EF01A7831710010C199 /* AwfulBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50C49EF71A7831710010C199 /* AwfulBinding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C49EEB1A7831710010C199 /* AwfulBinding.framework */; };
 		50C49EFE1A7831710010C199 /* AwfulBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C49EFD1A7831710010C199 /* AwfulBindingTests.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		5033BA211A815ED900516627 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		50AA32BD1A8EB5EF0073EA6A /* PUpdateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUpdateable.swift; sourceTree = "<group>"; };
+		50AA32BF1A8EB8410073EA6A /* CalculatedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatedValue.swift; sourceTree = "<group>"; };
 		50C49EEB1A7831710010C199 /* AwfulBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AwfulBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C49EEF1A7831710010C199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C49EF01A7831710010C199 /* AwfulBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwfulBinding.h; sourceTree = "<group>"; };
@@ -80,10 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				50C49F101A7831890010C199 /* BindableValue.swift */,
+				50AA32BF1A8EB8410073EA6A /* CalculatedValue.swift */,
 				50C49F111A7831890010C199 /* BindableArray.swift */,
 				50C49F121A7831890010C199 /* PBindableCollection.swift */,
 				50C49EF01A7831710010C199 /* AwfulBinding.h */,
 				50C49EEE1A7831710010C199 /* Supporting Files */,
+				50AA32BD1A8EB5EF0073EA6A /* PUpdateable.swift */,
 			);
 			path = AwfulBinding;
 			sourceTree = "<group>";
@@ -220,9 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AA32C01A8EB8410073EA6A /* CalculatedValue.swift in Sources */,
 				50C49F141A7831890010C199 /* BindableArray.swift in Sources */,
 				50C49F131A7831890010C199 /* BindableValue.swift in Sources */,
 				50C49F151A7831890010C199 /* PBindableCollection.swift in Sources */,
+				50AA32BE1A8EB5EF0073EA6A /* PUpdateable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
