@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class BindableValue<T>{
-    private var _value:T?
-    private var _changeListeners:Dictionary<NSObject, ((T?) -> Void)>
+public class BindableValue<ValueType:Any>{
+    private var _value:ValueType?
+    private var _changeListeners:Dictionary<NSObject, ((ValueType?) -> Void)>
     
-    public var value:T?{
+    public var value:ValueType?{
         get{
             return _value
         }
@@ -24,12 +24,12 @@ public class BindableValue<T>{
         }
     }
     
-    public init(initialValue:T?){
+    public init(initialValue:ValueType?){
         _value = initialValue
-        _changeListeners = Dictionary<NSObject, ((T?) -> Void)>()
+        _changeListeners = Dictionary<NSObject, ((ValueType?) -> Void)>()
     }
 
-    public func addListener(owner:NSObject, listener:(T?) -> Void, alertNow:Bool = false){
+    public func addListener(owner:NSObject, listener:(ValueType?) -> Void, alertNow:Bool = false){
         _changeListeners[owner] = listener
         
         if(alertNow){
@@ -45,5 +45,11 @@ public class BindableValue<T>{
         for changeListener in _changeListeners.values{
             changeListener(_value)
         }
+    }
+    
+    public var labelFunction:((value:ValueType?) -> String)?
+    
+    public var label:String?{
+        return labelFunction?(value: value)
     }
 }
