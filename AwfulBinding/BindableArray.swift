@@ -57,7 +57,13 @@ public class BindableArray<T> : PBindableCollection{
         }
     }
     
+    public func removeChangedListener(owner:NSObject){
+        _changedListeners.removeValueForKey(owner)
+    }
     
+    public func removeIndexChangedListener(owner:NSObject){
+        _indexChangedListeners.removeValueForKey(owner)
+    }
     
     public func removeAtIndex(index:Int) -> T{
         let value = _internalArray.removeAtIndex(index)
