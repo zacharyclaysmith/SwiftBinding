@@ -97,6 +97,16 @@ public class BindableArray<T> : PBindableCollection{
         }
     }
     
+    public func notifyChanged(){
+        alertChangedListeners()
+        alertAnyUpdateListeners()
+    }
+    
+    public func notifyIndexChanged(index:Int){
+        alertIndexChangedListeners(index)
+        alertAnyUpdateListeners()
+    }
+    
     private func alertAnyUpdateListeners(){
         for anyUpdateListener in _anyUpdateListeners.values{
             anyUpdateListener()
