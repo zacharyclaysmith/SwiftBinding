@@ -21,9 +21,22 @@ class AwfulBindingTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func test_plusEqualOperator() {
+        var test = BindableArray<String>()
+        
+        var callCount = 0
+        
+        test.addChangedListener(self, listener: { () -> Void in
+            assert(test.count == 1)
+            
+            ++callCount
+            
+            assert(callCount == 1, "Callcount == " + String(callCount))
+        }, alertNow: false)
+        
+        test += ["Hello"]
+        
+        assert(test.count == 1)
     }
     
     func testPerformanceExample() {
