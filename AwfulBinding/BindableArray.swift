@@ -124,4 +124,11 @@ public class BindableArray<T> : PBindableCollection{
     public func removeAnyUpdateListener(owner:NSObject){
         _anyUpdateListeners.removeValueForKey(owner)
     }
+    
+    public func removeAll(keepCapacity:Bool = false){
+        _internalArray.removeAll(keepCapacity: keepCapacity)
+        
+        alertChangedListeners()
+        alertAnyUpdateListeners()
+    }
 }
