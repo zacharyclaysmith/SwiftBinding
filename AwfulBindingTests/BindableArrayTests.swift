@@ -21,7 +21,7 @@ class AwfulBindingTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_plusEqualOperator() {
+    func test_append() {
         var test = BindableArray<String>()
         
         var callCount = 0
@@ -34,7 +34,7 @@ class AwfulBindingTests: XCTestCase {
             assert(callCount == 1, "Callcount == " + String(callCount))
         }, alertNow: false)
         
-        test += ["Hello"]
+        test.append(["Hello"])
         
         assert(test.count == 1)
     }
