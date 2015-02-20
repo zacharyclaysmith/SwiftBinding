@@ -8,6 +8,13 @@
 
 import Foundation
 
+infix operator +={ associativity left precedence 140}
+func +=<T>(inout left:BindableArray<T>, right:[T]) -> Void{
+    left.internalArray += right
+    
+    left.notifyChanged()//NOTE: is this necessary?
+}
+
 public class BindableArray<T> : PBindableCollection{
     private var _internalArray:[T]
     private var _changedListeners:Dictionary<NSObject, () -> Void>
