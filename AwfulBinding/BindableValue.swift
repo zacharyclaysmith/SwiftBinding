@@ -9,11 +9,11 @@
 import Foundation
 
 public class BindableValue<ValueType>:PUpdateable{
-    private var _value:ValueType?
+    private var _value:ValueType
     private var _changeListeners:Dictionary<NSObject, ((ValueType?) -> Void)>
     private var _anyUpdateListeners:Dictionary<NSObject, (() -> Void)>
     
-    public var value:ValueType?{
+    public var value:ValueType{
         get{
             return _value
         }
@@ -26,8 +26,8 @@ public class BindableValue<ValueType>:PUpdateable{
         }
     }
     
-    public init(initialValue:ValueType? = nil){
-        _value = initialValue
+    public init(value:ValueType){
+        _value = value
         _changeListeners = Dictionary<NSObject, ((ValueType?) -> Void)>()
         _anyUpdateListeners = Dictionary<NSObject, (() -> Void)>()
     }

@@ -23,7 +23,7 @@ public class CalculatedValue<ValueType>:BindableValue<ValueType>{
         _boundValues = boundValues
         self.calculator = calculator
         
-        super.init()
+        super.init(value:calculator(boundValues))
         
         for boundValue in boundValues{
             boundValue.addAnyUpdateListener(_listenerOwner, listener: boundValueUpdated, alertNow: false)

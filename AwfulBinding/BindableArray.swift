@@ -38,8 +38,8 @@ public class BindableArray<T> : PBindableCollection{
         }
     }
     
-    public init(initialArray:[T] = []){
-        _internalArray = initialArray
+    public init(internalArray:[T] = []){
+        _internalArray = internalArray
         _changedListeners = Dictionary<NSObject, () -> Void>()
         _indexChangedListeners = Dictionary<NSObject, (indexChanged:Int) -> Void>()
         _anyUpdateListeners = Dictionary<NSObject, (() -> Void)>()
