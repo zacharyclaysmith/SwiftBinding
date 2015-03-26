@@ -24,6 +24,10 @@ public extension BindableArray{
     public func distill<ValueType>(calculator:() -> ValueType) -> CalculatedValue<ValueType>{
         return CalculatedValue(boundValues: [self], calculator: calculator)
     }
+    
+    public func distill<ValueType>(calculator: @autoclosure () -> ValueType) -> CalculatedValue<ValueType>{
+        return CalculatedValue(boundValues: [self], calculator: calculator)
+    }
 }
 
 public class CalculatedValue<ValueType>:BindableValue<ValueType>{
