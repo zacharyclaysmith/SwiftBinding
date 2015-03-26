@@ -11,7 +11,11 @@ import Foundation
 //NOTE: Written as an extension here so that BindableValue doesn't have a dependency on CalculatedValue
 public extension BindableValue{
     ///SUMMARY: Convenience function to generate calculated values off of a single bindable value.
-    public func transform<ValueType>(calculator:([PUpdateable]) -> ValueType) -> CalculatedValue<ValueType>{
+    public func transform<ValueType>(calculator:() -> ValueType) -> CalculatedValue<ValueType>{
+        return CalculatedValue(boundValues: [self], calculator: calculator)
+    }
+    
+    public func transform<ValueType>(calculator: @autoclosure () -> ValueType) -> CalculatedValue<ValueType>{
         return CalculatedValue(boundValues: [self], calculator: calculator)
     }
 }
@@ -20,18 +24,18 @@ public class CalculatedValue<ValueType>:BindableValue<ValueType>{
     private let _listenerOwner:NSObject = NSObject()
     
     private func calculateValue(){
-        self.value = calculator(_boundValues)
+        self.value = calculator()
     }
     
-    public var calculator:([PUpdateable]) -> ValueType
+    public var calculator:() -> ValueType
     
     private var _boundValues:[PUpdateable]
     
-    public init(boundValues:[PUpdateable], calculator:([PUpdateable]) -> ValueType){
+    public init(boundValues:[PUpdateable], calculator:() -> ValueType){
         _boundValues = boundValues
         self.calculator = calculator
         
-        super.init(value:calculator(boundValues))
+        super.init(value:calculator())
         
         for boundValue in boundValues{
             boundValue.addAnyUpdateListener(_listenerOwner, listener: boundValueUpdated, alertNow: false)

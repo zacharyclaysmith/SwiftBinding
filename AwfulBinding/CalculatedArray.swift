@@ -9,7 +9,11 @@
 import Foundation
 
 public extension BindableArray{
-    public func transform<ValueType>(calculator:([PUpdateable]) -> [ValueType]) -> CalculatedArray<ValueType>{
+    public func transform<ValueType>(calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
+        return CalculatedArray(boundValues: [self], calculator: calculator)
+    }
+    
+    public func transform<ValueType>(calculator: @autoclosure () -> [ValueType]) -> CalculatedArray<ValueType>{
         return CalculatedArray(boundValues: [self], calculator: calculator)
     }
 }
@@ -18,19 +22,19 @@ public class CalculatedArray<ValueType>:BindableArray<ValueType>{
     private let _listenerOwner:NSObject = NSObject()
     
     private func calculateValue(){
-        self.internalArray = calculator(_boundValues)
+        self.internalArray = calculator()
     }
     
-    public var calculator:([PUpdateable]) -> [ValueType]
+    public var calculator:() -> [ValueType]
     
     private var _boundValues:[PUpdateable]
     
     //TODO: fine-tune updates for PBindableCollections
-    public init(boundValues:[PUpdateable], calculator:([PUpdateable]) -> [ValueType]){
+    public init(boundValues:[PUpdateable], calculator:() -> [ValueType]){
         _boundValues = boundValues
         self.calculator = calculator
         
-        super.init(internalArray:calculator(boundValues))
+        super.init(internalArray:calculator())
         
         for boundValue in boundValues{
             boundValue.addAnyUpdateListener(_listenerOwner, listener: boundValueUpdated, alertNow: false)
