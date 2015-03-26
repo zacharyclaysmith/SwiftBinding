@@ -20,6 +20,12 @@ public extension BindableValue{
     }
 }
 
+public extension BindableArray{
+    public func distill<ValueType>(calculator:() -> ValueType) -> CalculatedValue<ValueType>{
+        return CalculatedValue(boundValues: [self], calculator: calculator)
+    }
+}
+
 public class CalculatedValue<ValueType>:BindableValue<ValueType>{
     private let _listenerOwner:NSObject = NSObject()
     
