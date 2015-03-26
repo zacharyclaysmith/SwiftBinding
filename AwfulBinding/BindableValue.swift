@@ -10,8 +10,8 @@ import Foundation
 
 public class BindableValue<ValueType>:PUpdateable{
     private var _value:ValueType
-    private var _changeListeners:Dictionary<NSObject, ((ValueType) -> Void)>
-    private var _anyUpdateListeners:Dictionary<NSObject, (() -> Void)>
+    private var _changeListeners:[NSObject: (ValueType) -> Void]
+    private var _anyUpdateListeners:[NSObject: () -> Void]
     
     public var value:ValueType{
         get{
@@ -33,6 +33,7 @@ public class BindableValue<ValueType>:PUpdateable{
     }
 
     public func addListener(owner:NSObject, listener:(ValueType) -> Void, alertNow:Bool = false){
+        //test.setObject(listener, forKey: owner)
         _changeListeners[owner] = listener
         
         if(alertNow){

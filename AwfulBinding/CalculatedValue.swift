@@ -8,6 +8,14 @@
 
 import Foundation
 
+//NOTE: Written as an extension here so that BindableValue doesn't have a dependency on CalculatedValue
+public extension BindableValue{
+    ///SUMMARY: Convenience function to generate calculated values off of a single bindable value.
+    public func transform<ValueType>(calculator:([PUpdateable]) -> ValueType) -> CalculatedValue<ValueType>{
+        return CalculatedValue(boundValues: [self], calculator: calculator)
+    }
+}
+
 public class CalculatedValue<ValueType>:BindableValue<ValueType>{
     private let _listenerOwner:NSObject = NSObject()
     

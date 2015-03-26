@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5062BFC21AA5075900B485B1 /* WeakDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5062BFC11AA5075900B485B1 /* WeakDictionaryTests.swift */; };
 		50965EE71A97B5C600258080 /* BindableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C49F111A7831890010C199 /* BindableArray.swift */; };
 		50965EE81A97B5C600258080 /* BindableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C49F101A7831890010C199 /* BindableValue.swift */; };
 		50965EE91A97B5C600258080 /* CalculatedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA32BF1A8EB8410073EA6A /* CalculatedValue.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		5033BA211A815ED900516627 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5062BFC11AA5075900B485B1 /* WeakDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakDictionaryTests.swift; sourceTree = "<group>"; };
 		50AA32BD1A8EB5EF0073EA6A /* PUpdateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUpdateable.swift; sourceTree = "<group>"; };
 		50AA32BF1A8EB8410073EA6A /* CalculatedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatedValue.swift; sourceTree = "<group>"; };
 		50C49EEB1A7831710010C199 /* AwfulBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AwfulBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				50C49EFD1A7831710010C199 /* BindableArrayTests.swift */,
+				5062BFC11AA5075900B485B1 /* WeakDictionaryTests.swift */,
 				50C49EFB1A7831710010C199 /* Supporting Files */,
 			);
 			path = AwfulBindingTests;
@@ -247,6 +250,7 @@
 				50965EE81A97B5C600258080 /* BindableValue.swift in Sources */,
 				50965EEA1A97B5C600258080 /* PBindableCollection.swift in Sources */,
 				50C49EFE1A7831710010C199 /* BindableArrayTests.swift in Sources */,
+				5062BFC21AA5075900B485B1 /* WeakDictionaryTests.swift in Sources */,
 				50965EE91A97B5C600258080 /* CalculatedValue.swift in Sources */,
 				50965EEB1A97B5C600258080 /* PUpdateable.swift in Sources */,
 			);
