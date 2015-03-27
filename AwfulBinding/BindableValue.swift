@@ -27,7 +27,14 @@ public class BindableValue<ValueType>:PUpdateable{
     }
     
     //EXPL: Shorthand wrapper for the value property
-    public var v:ValueType{get{return self.value}set(value){self.value = value}}
+    public var v:ValueType{
+        get{
+            return self.value
+        }
+        set(newValue){
+            self.value = newValue
+        }
+    }
     
     public init(value:ValueType){
         _value = value
