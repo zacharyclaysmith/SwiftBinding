@@ -1,6 +1,6 @@
 //
 //  BindableValue.swift
-//  ARWorld
+//  AwfulBinding
 //
 //  Created by Zachary Smith on 12/22/14.
 //  Copyright (c) 2014 Zachary Smith. All rights reserved.
@@ -25,6 +25,9 @@ public class BindableValue<ValueType>:PUpdateable{
             alertAnyUpdateListeners()
         }
     }
+    
+    //EXPL: Shorthand wrapper for the value property
+    public var v:ValueType{get{return self.value}set(value){self.value = value}}
     
     public init(value:ValueType){
         _value = value
