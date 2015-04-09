@@ -32,7 +32,7 @@ class AwfulBindingTests: XCTestCase {
             ++callCount
             
             assert(callCount == 1, "Callcount == " + String(callCount))
-        }, alertNow: false)
+        })
         
         test.append(["Hello"])
         

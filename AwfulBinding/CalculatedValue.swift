@@ -15,29 +15,17 @@ public extension BindableValue{
         return CalculatedValue(boundValues: [self], calculator: calculator)
     }
     
-    public func transform<ValueType>(calculator: @autoclosure () -> ValueType) -> CalculatedValue<ValueType>{
-        return CalculatedValue(boundValues: [self], calculator: calculator)
-    }
-    
     public func combine<ValueType>(otherValue:PUpdateable, calculator:() -> ValueType) -> CalculatedValue<ValueType>{
         return CalculatedValue(boundValues: [self, otherValue], calculator: calculator)
     }
     
-    public func combine<ValueType>(otherValue:PUpdateable, calculator:@autoclosure  () -> ValueType) -> CalculatedValue<ValueType>{
-        return CalculatedValue(boundValues: [self, otherValue], calculator: calculator)
-    }
-    
-    public func combine<ValueType>(otherValues:[PUpdateable], calculator:@autoclosure  () -> ValueType) -> CalculatedValue<ValueType>{
+    public func combine<ValueType>(otherValues:[PUpdateable], calculator: () -> ValueType) -> CalculatedValue<ValueType>{
         return CalculatedValue(boundValues: [self] + otherValues, calculator: calculator)
     }
 }
 
 public extension BindableArray{
     public func distill<ValueType>(calculator:() -> ValueType) -> CalculatedValue<ValueType>{
-        return CalculatedValue(boundValues: [self], calculator: calculator)
-    }
-    
-    public func distill<ValueType>(calculator: @autoclosure () -> ValueType) -> CalculatedValue<ValueType>{
         return CalculatedValue(boundValues: [self], calculator: calculator)
     }
 }

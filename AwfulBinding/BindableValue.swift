@@ -43,7 +43,7 @@ public class BindableValue<ValueType>:PUpdateable{
     }
 
     //DEPRECATED
-    public func addListener(owner:NSObject, listener:(ValueType) -> Void, alertNow:Bool = false){
+    public func addListener(owner:NSObject, alertNow:Bool = false, listener:(ValueType) -> Void){
         //test.setObject(listener, forKey: owner)
         _changeListeners[owner] = listener
         
@@ -52,7 +52,7 @@ public class BindableValue<ValueType>:PUpdateable{
         }
     }
     
-    public func addChangeListener(owner:NSObject, listener:(ValueType) -> Void, alertNow:Bool = false){
+    public func addChangeListener(owner:NSObject, alertNow:Bool = false, listener:(ValueType) -> Void){
         //test.setObject(listener, forKey: owner)
         _changeListeners[owner] = listener
         

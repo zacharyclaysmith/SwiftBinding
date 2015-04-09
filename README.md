@@ -8,6 +8,8 @@ This is meant to be a stand-alone library, but to see the companion UI stuff I b
 
 If you want something with way more stars and more code, please check out https://github.com/SwiftBond/Bond. It's scarily similar to this project (unintentional), but it looks to have a number of neat additions and more robust documentation. I don't like the coupling of the View and Binding code in a single project, but whatevs.
 
+TODO: update examples in this document to reflect to some Swift 1.2 changes.
+
 ## Installation
 
 1. Carthage

@@ -11,7 +11,7 @@ import Foundation
 public protocol PBindableCollection:PUpdateable{
     var count:Int{get}
     func addIndexChangedListener(owner:NSObject, listener:(indexChanged:Int) -> Void)
-    func addChangedListener(owner:NSObject, listener:() -> Void, alertNow:Bool)
+    func addChangedListener(owner:NSObject, alertNow:Bool, listener:() -> Void)
     func removeIndexChangedListener(owner:NSObject)
     func removeChangedListener(owner:NSObject)
 }

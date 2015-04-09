@@ -49,7 +49,7 @@ public class BindableArray<T> : PBindableCollection{
         _indexChangedListeners[owner] = listener
     }
     
-    public func addChangedListener(owner:NSObject, listener:() -> Void, alertNow:Bool = false){
+    public func addChangedListener(owner:NSObject, alertNow:Bool = false, listener:() -> Void){
         _changedListeners[owner] = listener
         
         if(alertNow){

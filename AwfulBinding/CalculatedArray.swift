@@ -12,21 +12,12 @@ public extension BindableArray{
     public func transform<ValueType>(calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
         return CalculatedArray(boundValues: [self], calculator: calculator)
     }
-    public func transform<ValueType>(calculator: @autoclosure () -> [ValueType]) -> CalculatedArray<ValueType>{
-        return CalculatedArray(boundValues: [self], calculator: calculator)
-    }
     
     public func filter<ValueType>(filterValue: PUpdateable, calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
         return CalculatedArray(boundValues: [self, filterValue], calculator: calculator)
     }
-    public func filter<ValueType>(filterValue: PUpdateable, calculator: @autoclosure () -> [ValueType]) -> CalculatedArray<ValueType>{
-        return CalculatedArray(boundValues: [self, filterValue], calculator: calculator)
-    }
     
     public func filter<ValueType>(filterValues: [PUpdateable], calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
-        return CalculatedArray(boundValues: [self] + filterValues, calculator: calculator)
-    }
-    public func filter<ValueType>(filterValues: [PUpdateable], calculator: @autoclosure () -> [ValueType]) -> CalculatedArray<ValueType>{
         return CalculatedArray(boundValues: [self] + filterValues, calculator: calculator)
     }
 }
