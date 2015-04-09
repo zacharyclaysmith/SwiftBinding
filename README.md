@@ -6,6 +6,8 @@ This is a terribly simplistic "binding framework" written in Swift. There's noth
 
 This is meant to be a stand-alone library, but to see the companion UI stuff I built on top, check out https://github.com/zacharyclaysmith/AwfulBindingUI.
 
+If you want something with way more stars and more code, please check out https://github.com/SwiftBond/Bond. It's scarily similar to this project (unintentional), but it looks to have a number of neat additions and more robust documentation. I don't like the coupling of the View and Binding code in a single project, but whatevs.
+
 ## Installation
 
 1. Carthage
