@@ -4,7 +4,7 @@
 
 This is a terribly simplistic "binding framework" written in Swift. There's nothing super special about it...it's just glorified object wrappers that call listener functions when the values change.
 
-
+This is meant to be a stand-alone library, but to see the companion UI stuff I built on top, check out https://github.com/zacharyclaysmith/AwfulBindingUI.
 
 ## Installation
 
