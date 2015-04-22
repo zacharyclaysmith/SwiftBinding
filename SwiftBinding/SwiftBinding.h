@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Zachary Smith. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SwiftBinding.
 FOUNDATION_EXPORT double SwiftBindingVersionNumber;

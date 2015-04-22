@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Scal.io. All rights reserved.
 //
 
-import UIKit
 import XCTest
 
 class WeakDictionaryTests: XCTestCase {

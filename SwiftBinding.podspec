@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "SwiftBinding"
-s.version      = "1.0.0-beta"
+s.version      = "1.0.0-beta.4"
 s.summary      = "A Binding Library for the Swift language."
 
 s.description  = <<-DESC
@@ -17,10 +17,8 @@ s.license      = { :type => "MIT", :file => "LICENSE.md" }
 s.author             = { "Zachary Clay Smith" => "Zachary.Clay.Smith@gmail.com" }
 s.ios.deployment_target = "8.0"
 s.osx.deployment_target = "10.10"
-s.source       = { :git => "https://github.com/SwiftBinding/SwiftBinding.git", :tag => "v1.0.0-beta.3" }
-s.source_files  = "SwiftBinding"
-s.framework     = 'SystemConfiguration'
-s.exclude_files = "Classes/Exclude"
+s.source       = { :git => "https://github.com/SwiftBinding/SwiftBinding.git", :tag => s.version }
+s.source_files  = "SwiftBinding/**/*.swift"
 s.requires_arc = true
 
 end
