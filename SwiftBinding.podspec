@@ -17,7 +17,7 @@ s.license      = { :type => "MIT", :file => "LICENSE.md" }
 s.author             = { "Zachary Clay Smith" => "Zachary.Clay.Smith@gmail.com" }
 s.ios.deployment_target = "8.0"
 s.osx.deployment_target = "10.10"
-s.source       = { :git => "https://github.com/SwiftBinding/SwiftBinding.git", :tag => s.version }
+s.source       = { :git => "https://github.com/zacharyclaysmith/SwiftBinding.git", :tag => s.version }
 s.source_files  = "SwiftBinding/**/*.swift"
 s.requires_arc = true
 
