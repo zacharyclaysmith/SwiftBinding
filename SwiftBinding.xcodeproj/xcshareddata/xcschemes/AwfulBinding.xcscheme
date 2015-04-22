@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50C49EEA1A7831710010C199"
-               BuildableName = "AwfulBinding.framework"
-               BlueprintName = "AwfulBinding"
-               ReferencedContainer = "container:AwfulBinding.xcodeproj">
+               BuildableName = "SwiftBinding.framework"
+               BlueprintName = "SwiftBinding"
+               ReferencedContainer = "container:SwiftBinding.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50C49EF51A7831710010C199"
-               BuildableName = "AwfulBindingTests.xctest"
-               BlueprintName = "AwfulBindingTests"
-               ReferencedContainer = "container:AwfulBinding.xcodeproj">
+               BuildableName = "SwiftBindingTests.xctest"
+               BlueprintName = "SwiftBindingTests"
+               ReferencedContainer = "container:SwiftBinding.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50C49EF51A7831710010C199"
-               BuildableName = "AwfulBindingTests.xctest"
-               BlueprintName = "AwfulBindingTests"
-               ReferencedContainer = "container:AwfulBinding.xcodeproj">
+               BuildableName = "SwiftBindingTests.xctest"
+               BlueprintName = "SwiftBindingTests"
+               ReferencedContainer = "container:SwiftBinding.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50C49EEA1A7831710010C199"
-            BuildableName = "AwfulBinding.framework"
-            BlueprintName = "AwfulBinding"
-            ReferencedContainer = "container:AwfulBinding.xcodeproj">
+            BuildableName = "SwiftBinding.framework"
+            BlueprintName = "SwiftBinding"
+            ReferencedContainer = "container:SwiftBinding.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50C49EEA1A7831710010C199"
-            BuildableName = "AwfulBinding.framework"
-            BlueprintName = "AwfulBinding"
-            ReferencedContainer = "container:AwfulBinding.xcodeproj">
+            BuildableName = "SwiftBinding.framework"
+            BlueprintName = "SwiftBinding"
+            ReferencedContainer = "container:SwiftBinding.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50C49EEA1A7831710010C199"
-            BuildableName = "AwfulBinding.framework"
-            BlueprintName = "AwfulBinding"
-            ReferencedContainer = "container:AwfulBinding.xcodeproj">
+            BuildableName = "SwiftBinding.framework"
+            BlueprintName = "SwiftBinding"
+            ReferencedContainer = "container:SwiftBinding.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -1,6 +1,6 @@
 //
 //  BindableArray.swift
-//  AwfulBinding
+//  SwiftBinding
 //
 //  Created by Zachary Smith on 12/22/14.
 //  Copyright (c) 2014 Zachary Smith. All rights reserved.

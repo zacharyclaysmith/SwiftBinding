@@ -1,10 +1,10 @@
 <snippet>
 <content>
-# AwfulBinding
+# SwiftBinding
 
 This is a terribly simplistic "binding framework" written in Swift. There's nothing super special about it...it's just glorified object wrappers that call listener functions when the values change.
 
-This is meant to be a stand-alone library, but to see the companion UI stuff I built on top, check out https://github.com/zacharyclaysmith/AwfulBindingUI.
+This is meant to be a stand-alone library, but to see the companion UI stuff I built on top, check out https://github.com/zacharyclaysmith/SwiftBindingUI.
 
 If you want something with way more stars and more code, please check out https://github.com/SwiftBond/Bond. It's scarily similar to this project (unintentional), but it looks to have a number of neat additions and more robust documentation. I don't like the coupling of the View and Binding code in a single project, but whatevs.
 
@@ -13,7 +13,7 @@ TODO: update examples in this document to reflect to some Swift 1.2 changes.
 ## Installation
 
 1. Carthage
-  * Add `github "zacharyclaysmith/AwfulBinding"` to your Cartfile
+  * Add `github "zacharyclaysmith/SwiftBinding"` to your Cartfile
   * Run `carthage update`
 2. CocoaPods
   * *Not yet supported*
@@ -199,7 +199,7 @@ TODO...It's actually pretty awesome, but I can only write so much documentation 
 
 ## History
 
-I wanted a simple binding framework for iOS/Swift, so I started this. It's proven itself pretty useful. I've used several binding frameworks over the year and have learned that basic value and array support are really all you need, plus some UI sugar on top (see https://github.com/zacharyclaysmith/AwfulBindingUI for that mess).
+I wanted a simple binding framework for iOS/Swift, so I started this. It's proven itself pretty useful. I've used several binding frameworks over the year and have learned that basic value and array support are really all you need, plus some UI sugar on top (see https://github.com/zacharyclaysmith/SwiftBindingUI for that mess).
 
 I don't consider this library complete or well tested, yet, but it's functional and a good starting point. I'd like to keep it as simple as possible, however, and build other libraries around it.
 
