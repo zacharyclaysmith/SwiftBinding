@@ -16,11 +16,15 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftBinding"
-  s.version      = "1.0.0-beta"
-  s.summary      = "An extremely simple and terrible binding library for the Swift language."
+  s.version      = "1.0-beta.2"
+  s.summary      = "A value binding framework for the Swift language."
 
   s.description  = <<-DESC
-                   A value binding framework for the Swift language.
+This is a terribly simplistic "binding framework" written in Swift. There's nothing super special about it...it's just glorified object wrappers that call listener functions when the values change.
+
+This is meant to be a stand-alone library, but to see the companion UI stuff I built on top, check out https://github.com/zacharyclaysmith/SwiftBindingUI.
+
+If you want something with way more stars and more code, please check out https://github.com/SwiftBond/Bond. It's scarily similar to this project (unintentional), but it looks to have a number of neat additions and more robust documentation. I don't like the coupling of the View and Binding code in a single project, but whatevs.
                    DESC
 
   s.homepage     = "https://github.com/zacharyclaysmith/SwiftBinding"
@@ -34,7 +38,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -60,7 +64,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -73,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/zacharyclaysmith/SwiftBinding.git", :commit => "1b183c626fed1ba4e56b8311e3fd5c8252b9b41d" }
+  s.source       = { :git => "https://github.com/zacharyclaysmith/SwiftBinding.git", :tag => "v1.0-beta.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -84,10 +88,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+s.source_files  = "SwiftBinding", "SwiftBinding/**/*.{h,m,swift}"
   s.exclude_files = "Classes/Exclude"
 
-  # s.public_header_files = "Classes/**/*.h"
+  # s.public_header_files = "SwiftBinding/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
