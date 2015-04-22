@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftBinding"
-  s.version      = "1.0-beta.3"
+  s.version      = "1.0.0"
   s.summary      = "A value binding framework for the Swift language."
 
   s.description  = <<-DESC
@@ -88,10 +88,10 @@ If you want something with way more stars and more code, please check out https:
   #  Not including the public_header_files will make all headers public.
   #
 
-s.source_files  = "SwiftBinding", "SwiftBinding/**/*.{h,m,swift}"
-  s.exclude_files = "Classes/Exclude"
+s.source_files  = "**/*.{h,m,swift}"
+  s.exclude_files = "Exclude"
 
-  # s.public_header_files = "SwiftBinding/**/*.h"
+s.public_header_files = "**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
