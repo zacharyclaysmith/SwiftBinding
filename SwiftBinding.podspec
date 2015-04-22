@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftBinding"
-  s.version      = "1.0-beta.2"
+  s.version      = "1.0-beta.3"
   s.summary      = "A value binding framework for the Swift language."
 
   s.description  = <<-DESC
@@ -77,7 +77,7 @@ If you want something with way more stars and more code, please check out https:
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/zacharyclaysmith/SwiftBinding.git", :tag => "v1.0-beta.2" }
+  s.source       = { :git => "https://github.com/zacharyclaysmith/SwiftBinding.git", :tag => "v1.0-beta.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
