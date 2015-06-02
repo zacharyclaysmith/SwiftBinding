@@ -104,7 +104,7 @@ This is just a function that produces a value of the given `T` value for the `Ca
 func example_basicCalculatedValueUsage(){
   let bindableInteger = BindableValue<Int>(value: 0)
 
-  let calculatedCurrencyString = CalculatedValue<String>([bindableInteger], {() -> String in
+  let calculatedCurrencyString = CalculatedValue<String>([bindableInteger], calculator:{() -> String in
     return "$" + toString(bindableInteger.value) + ".00"
   })
 
@@ -129,7 +129,7 @@ To make things more syntactically/semantically appealing, I wrote the following 
 func example_transform(){
   let bindableInteger = BindableValue<Int>(value: 0)
 
-  let calculatedCurrencyString = bindableInteger.transform("$" + toString(bindableInteger.value) + ".00") //EFFECT: calculatedCurrencyString.v == "$0.00"
+  let calculatedCurrencyString = bindableInteger.transform({"$" + toString(bindableInteger.value) + ".00"}) //EFFECT: calculatedCurrencyString.v == "$0.00"
 
   bindableInteger.value = 15 //EFFECT: calculatedCurrencyString.v == "$15.00"
 }
@@ -199,7 +199,7 @@ TODO...It's actually pretty awesome, but I can only write so much documentation 
 
 ## History
 
-I wanted a simple binding framework for iOS/Swift, so I started this. It's proven itself pretty useful. I've used several binding frameworks over the year and have learned that basic value and array support are really all you need, plus some UI sugar on top (see https://github.com/zacharyclaysmith/SwiftBindingUI for that mess).
+I wanted a simple binding framework for iOS/Swift, so I started this. It's proven itself pretty useful. I've used several binding frameworks over the years and have learned that basic value and array binding support are really all you need, plus some UI sugar on top (see https://github.com/zacharyclaysmith/SwiftBindingUI for that mess).
 
 I don't consider this library complete or well tested, yet, but it's functional and a good starting point. I'd like to keep it as simple as possible, however, and build other libraries around it.
 
