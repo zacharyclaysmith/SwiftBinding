@@ -16,7 +16,7 @@ TODO: update examples in this document to reflect to some Swift 1.2 changes.
   * Add `github "zacharyclaysmith/SwiftBinding"` to your Cartfile
   * Run `carthage update`
 2. CocoaPods
-  * *Not yet supported*
+  * `pod 'SwiftBinding'`
 3. Manual Installation
   * Clone the repo
   * Build
