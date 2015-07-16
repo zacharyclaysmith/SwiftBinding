@@ -13,16 +13,34 @@ TODO: update examples in this document to reflect to some Swift 1.2 changes.
 ## Installation
 
 1. Carthage
-  * Add `github "zacharyclaysmith/SwiftBinding"` to your Cartfile
-  * Run `carthage update`
+* Add `github "zacharyclaysmith/SwiftBinding"` to your Cartfile
+* Run `carthage update`
 2. CocoaPods
-  * `pod 'SwiftBinding'`
+* `pod 'SwiftBinding'`
 3. Manual Installation
-  * Clone the repo
-  * Build
-  * Include the framework in your project.
+* Clone the repo
+* Build
+* Include the framework in your project.
 
-## Usage
+## Usage _(work in progress)_
+
+###BindableValue
+
+| Public Variable | Type    | Description | Notes |
+| --------------- | ------- | ----------- | ----- |
+| value           | T | Settings this value will trigger any listener functions.
+| v					 | T | Shorthand wrapper for _value_
+
+| Public Method | Returns | Description | Notes |
+| --------------| ------- | ----------- | ----- |
+| addChangeListener(owner:NSObject, alertNow:Bool = false, listener:(ValueType) -> Void) | Void | Adds a "change listener" to this object, where the _owner_ parameter acts as a key. These listeners are alerted any time the _value_ for this object is changed or when _alertChangeListeners()_ is called manually. | In a future version, the _owner_ parameter will likely be replaced by a more generic keying system, as _NSObjects_ are kind of stupid.
+| removeChangeListener(owner:NSObject) | Void | removes any existing change listener keyed by the _owner_ parameter.
+| alertChangeListeners() | Void | A manual way to call listeners added through the _addChangeListener_ method. | Useful when you have to change a value in more subtle ways than just changing its core value (e.g. when a sub-property changes). Also, at this time, this method does _**not**_ call "anyUpdate" listeners. I would call that a bug.
+| addAnyUpdateListener(owner:NSObject, listener:() -> Void, alertNow:Bool) | Void | Adds an "Any Update" listener to this object. | This is a redundancy of addChangeListener, but is required to match the _PUpdateListener_ protocol.
+| removeAnyUpdateListener(Owner:NSObject) | Void | Removes an "Any Update" listener.
+| alertAnyUpdateListeners() | Void | A manual way to call "Any Update" listeners. | Useful when you have to change a value in more subtle ways than just changing its core value (e.g. when a sub-property changes).
+
+## Usage (_extended cut_)
 
 ### BindableValue<T>
 
@@ -47,47 +65,47 @@ Update listeners are a protocol-friendly version of change listeners. This is ty
 
 ```
 func example_addChangeListener(){
-    let someBindableString = BindableValue<String>(initialValue:"test")
+let someBindableString = BindableValue<String>(initialValue:"test")
 
-    someBindableString.addListener(self, listener: someListener)
+someBindableString.addListener(self, listener: someListener)
 
-    someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
+someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
 }
 
 func someListener(value:String){
-    //DO SOMETHING
+//DO SOMETHING
 }
 ```
 
 ```
 func example_alertNow(){
-    let someBindableString = BindableValue<String>(initialValue:"test")
+let someBindableString = BindableValue<String>(initialValue:"test")
 
-    someBindableString.addListener(self, listener: someListener, alertNow:true) //EFFECT: someListener is called with a value of "test"
+someBindableString.addListener(self, listener: someListener, alertNow:true) //EFFECT: someListener is called with a value of "test"
 
-    someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
+someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
 }
 
 func someListener(value:String){
-    //DO SOMETHING
+//DO SOMETHING
 }
 ```
 
 ```
 func example_removeChangeListener(){
-    let someBindableString = BindableValue<String>(initialValue:"test")
+let someBindableString = BindableValue<String>(initialValue:"test")
 
-    someBindableString.addChangeListener(self, listener: someListener, alertNow:true) //EFFECT: someListener is called with a value of "test"
+someBindableString.addChangeListener(self, listener: someListener, alertNow:true) //EFFECT: someListener is called with a value of "test"
 
-    someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
+someBindableString.value = "newValue" //EFFECT: someListener is called with a value of "newValue"
 
-    someBindableString.removeChangeListener(self)
+someBindableString.removeChangeListener(self)
 
-    someBindableString.value = "anotherValue"  //EFFECT: someListener is NOT called.
+someBindableString.value = "anotherValue"  //EFFECT: someListener is NOT called.
 }
 
 func someListener(value:String){
-    //DO SOMETHING
+//DO SOMETHING
 }
 ```
 ### `CalculatedValue<T>`
@@ -102,17 +120,17 @@ This is just a function that produces a value of the given `T` value for the `Ca
 #### Examples
 ```
 func example_basicCalculatedValueUsage(){
-  let bindableInteger = BindableValue<Int>(value: 0)
+let bindableInteger = BindableValue<Int>(value: 0)
 
-  let calculatedCurrencyString = CalculatedValue<String>([bindableInteger], calculator:{() -> String in
-    return "$" + toString(bindableInteger.value) + ".00"
-  })
+let calculatedCurrencyString = CalculatedValue<String>([bindableInteger], calculator:{() -> String in
+return "$" + toString(bindableInteger.value) + ".00"
+})
 
-  //EFFECT: calculatedCurrencyString.v == "$0.00"
+//EFFECT: calculatedCurrencyString.v == "$0.00"
 
-  bindableInteger.value = 15
+bindableInteger.value = 15
 
-  //EFFECT: calculatedCurrencyString.v == "$15.00"
+//EFFECT: calculatedCurrencyString.v == "$15.00"
 }
 ```
 
@@ -127,34 +145,34 @@ To make things more syntactically/semantically appealing, I wrote the following 
 #### Examples
 ```
 func example_transform(){
-  let bindableInteger = BindableValue<Int>(value: 0)
+let bindableInteger = BindableValue<Int>(value: 0)
 
-  let calculatedCurrencyString = bindableInteger.transform({"$" + toString(bindableInteger.value) + ".00"}) //EFFECT: calculatedCurrencyString.v == "$0.00"
+let calculatedCurrencyString = bindableInteger.transform({"$" + toString(bindableInteger.value) + ".00"}) //EFFECT: calculatedCurrencyString.v == "$0.00"
 
-  bindableInteger.value = 15 //EFFECT: calculatedCurrencyString.v == "$15.00"
+bindableInteger.value = 15 //EFFECT: calculatedCurrencyString.v == "$15.00"
 }
 ```
 
 ```
 func example_combineSingle(){
-  let bindableInteger = BindableValue<Int>(value: 1)
-  let bindableInteger2 = BindableValue<Float>(value: 5.0)
+let bindableInteger = BindableValue<Int>(value: 1)
+let bindableInteger2 = BindableValue<Float>(value: 5.0)
 
-  let sumCurrencyString = bindableInteger.combine(bindableInteger2, calculator: "$" + toString((bindableInteger.value + bindableFloat.value)) + ".00") //EFFECT: calculatedCurrencyString.v == "$6.00"
+let sumCurrencyString = bindableInteger.combine(bindableInteger2, calculator: "$" + toString((bindableInteger.value + bindableFloat.value)) + ".00") //EFFECT: calculatedCurrencyString.v == "$6.00"
 
-  bindableInteger.value = 15 //EFFECT: calculatedCurrencyString.v == "$20.00"
+bindableInteger.value = 15 //EFFECT: calculatedCurrencyString.v == "$20.00"
 }
 
 func example_combineMultiple(){
-  let bindableInteger = BindableValue<Int>(value: 1)
-  let bindableInteger2 = BindableValue<Int>(value: 5.0)
-  let bindableInteger3 = BindableValue<Int>(value: 10.0)
+let bindableInteger = BindableValue<Int>(value: 1)
+let bindableInteger2 = BindableValue<Int>(value: 5.0)
+let bindableInteger3 = BindableValue<Int>(value: 10.0)
 
-  let sumDollarString = bindableInteger.combine([bindableInteger2, bindableInteger3], 
-    calculator: "$" + toString((bindableInteger.value + bindableFloat.value + bindableFloat2.value)) + ".00") 
-    //EFFECT: calculatedCurrencyString.v == "$16.00"
+let sumDollarString = bindableInteger.combine([bindableInteger2, bindableInteger3], 
+calculator: "$" + toString((bindableInteger.value + bindableFloat.value + bindableFloat2.value)) + ".00") 
+//EFFECT: calculatedCurrencyString.v == "$16.00"
 
-  bindableInteger.value = 15 //EFFECT: calculatedCurrencyString.v == "$31.00"
+bindableInteger.value = 15 //EFFECT: calculatedCurrencyString.v == "$31.00"
 }
 ```
 
@@ -180,15 +198,15 @@ I tend to take the "optimize it when it's broken" approach to development, so I 
 
 ```
 func example_append(){
-    let bindableArray = BindableArray<String>(initialArray:[])
+let bindableArray = BindableArray<String>(initialArray:[])
 
-    bindableArray.addIndexChangedListener(self, listener:someListener)
+bindableArray.addIndexChangedListener(self, listener:someListener)
 
-    bindableArray.append("someString") //EFFECT: someListener is called with index == bindableArray.length - 1
+bindableArray.append("someString") //EFFECT: someListener is called with index == bindableArray.length - 1
 }
 
 func someListener(index:Int){
-    //DO SOMETHING
+//DO SOMETHING
 }
 
 ```

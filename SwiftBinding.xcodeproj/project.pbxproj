@@ -28,6 +28,8 @@
 		E4EBA9F91B238DD700D6822E /* BindableValue_PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EBA9F81B238DD700D6822E /* BindableValue_PerformanceTests.swift */; };
 		E4F0A8601B583B8400267F8E /* CustomBindableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F0A85F1B583B8400267F8E /* CustomBindableValue.swift */; };
 		E4F0A8611B583B8400267F8E /* CustomBindableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F0A85F1B583B8400267F8E /* CustomBindableValue.swift */; };
+		E4F0A8631B5865A800267F8E /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = E4F0A8621B5865A800267F8E /* LICENSE.md */; };
+		E4F0A8641B5865A800267F8E /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = E4F0A8621B5865A800267F8E /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		E4EBA9F51B238C7500D6822E /* ThreadUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadUtil.swift; sourceTree = "<group>"; };
 		E4EBA9F81B238DD700D6822E /* BindableValue_PerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableValue_PerformanceTests.swift; sourceTree = "<group>"; };
 		E4F0A85F1B583B8400267F8E /* CustomBindableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBindableValue.swift; sourceTree = "<group>"; };
+		E4F0A8621B5865A800267F8E /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 		50C49EE11A7831710010C199 = {
 			isa = PBXGroup;
 			children = (
+				E4F0A8621B5865A800267F8E /* LICENSE.md */,
 				E462F9251AE82AD40019E621 /* SwiftBinding.podspec */,
 				5033BA211A815ED900516627 /* README.md */,
 				50C49EED1A7831710010C199 /* SwiftBinding */,
@@ -261,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50AA32C01A8EB8410073EA6A /* CalculatedValue.swift in Sources */,
+				E4F0A8631B5865A800267F8E /* LICENSE.md in Sources */,
 				E4EBA9F61B238C7500D6822E /* ThreadUtil.swift in Sources */,
 				50C49F141A7831890010C199 /* BindableArray.swift in Sources */,
 				50C49F131A7831890010C199 /* BindableValue.swift in Sources */,
@@ -285,6 +290,7 @@
 				50965EE91A97B5C600258080 /* CalculatedValue.swift in Sources */,
 				50965EEB1A97B5C600258080 /* PUpdateable.swift in Sources */,
 				E4F0A8611B583B8400267F8E /* CustomBindableValue.swift in Sources */,
+				E4F0A8641B5865A800267F8E /* LICENSE.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
