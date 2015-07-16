@@ -28,6 +28,16 @@ public extension BindableArray{
     public func distill<ValueType>(calculator:() -> ValueType) -> CalculatedValue<ValueType>{
         return CalculatedValue(boundValues: [self], calculator: calculator)
     }
+  
+  public func distill<ValueType>(otherValues:[PUpdateable], calculator:() -> ValueType) -> CalculatedValue<ValueType>{
+    return CalculatedValue(boundValues: [self] + otherValues, calculator: calculator)
+  }
+  
+  public func countBinding() -> CalculatedValue<Int>{
+    return self.distill({return self.count})
+  }
+  
+  //TODO: distill with other updateables
 }
 
 public class CalculatedValue<ValueType>:BindableValue<ValueType>{

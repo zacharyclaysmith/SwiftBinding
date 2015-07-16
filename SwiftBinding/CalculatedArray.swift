@@ -12,7 +12,11 @@ public extension BindableArray{
     public func transform<ValueType>(calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
         return CalculatedArray(boundValues: [self], calculator: calculator)
     }
-    
+  
+    public func filter<ValueType>(calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
+      return CalculatedArray(boundValues: [self], calculator: calculator)
+    }
+  
     public func filter<ValueType>(filterValue: PUpdateable, calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
         return CalculatedArray(boundValues: [self, filterValue], calculator: calculator)
     }
@@ -20,6 +24,24 @@ public extension BindableArray{
     public func filter<ValueType>(filterValues: [PUpdateable], calculator: () -> [ValueType]) -> CalculatedArray<ValueType>{
         return CalculatedArray(boundValues: [self] + filterValues, calculator: calculator)
     }
+  
+  public func map<ValueType>(mapFunction: (T) -> ValueType) -> CalculatedArray<ValueType>{
+    return CalculatedArray(boundValues: [self], calculator: {
+      return self.internalArray.map({mapFunction($0)})
+    })
+  }
+  
+  public func map<ValueType, NewValueType>(filterValue: PUpdateable, mapFunction: (T) -> NewValueType) -> CalculatedArray<NewValueType>{
+    return CalculatedArray(boundValues: [self, filterValue], calculator: {
+      return self.internalArray.map({mapFunction($0)})
+    })
+  }
+  
+  public func map<ValueType, NewValueType>(filterValues: [PUpdateable], mapFunction: (T) -> NewValueType) -> CalculatedArray<NewValueType>{
+    return CalculatedArray(boundValues: [self] + filterValues, calculator: {
+      return self.internalArray.map({mapFunction($0)})
+    })
+  }
 }
 
 public class CalculatedArray<ValueType>:BindableArray<ValueType>{
@@ -38,7 +60,7 @@ public class CalculatedArray<ValueType>:BindableArray<ValueType>{
         _boundValues = boundValues
         self.calculator = calculator
         
-        super.init(internalArray:calculator())
+        super.init(value:calculator())
         
         for boundValue in boundValues{
             boundValue.addAnyUpdateListener(_listenerOwner, listener: boundValueUpdated, alertNow: false)

@@ -14,16 +14,16 @@ public class BindableValue<ValueType>:PUpdateable{
     private var _anyUpdateListeners:[NSObject: () -> Void]
     
     public var value:ValueType{
-        get{
-            return _value
-        }
+      get{
+          return _value
+      }
+      
+      set(newValue){
+        _value = newValue
         
-        set(newValue){
-            _value = newValue
-            
-            alertChangeListeners()
-            alertAnyUpdateListeners()
-        }
+        alertChangeListeners()
+        alertAnyUpdateListeners()
+      }
     }
     
     //EXPL: Shorthand wrapper for the value property
@@ -71,8 +71,8 @@ public class BindableValue<ValueType>:PUpdateable{
     }
     
     internal func alertChangeListeners(){
-        for changeListener in _changeListeners.values{
-            changeListener(_value)
+        for changeListener in self._changeListeners.values{
+          changeListener(self._value)
         }
     }
     

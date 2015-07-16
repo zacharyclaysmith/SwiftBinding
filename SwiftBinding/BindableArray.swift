@@ -9,37 +9,47 @@
 import Foundation
 
 public class BindableArray<T> : PBindableCollection{
-    private var _internalArray:[T]
+    private var _value:[T]
     private var _changedListeners:Dictionary<NSObject, () -> Void>
     private var _indexChangedListeners:Dictionary<NSObject, ((indexChanged:Int) -> Void)>
     private var _anyUpdateListeners:Dictionary<NSObject, (() -> Void)>
     
     public subscript(index:Int) -> T{
         get{
-            return _internalArray[index]
+            return _value[index]
         }
         
         set(newValue){
-            _internalArray[index] = newValue
+            _value[index] = newValue
             
             alertIndexChangedListeners(index)
             alertAnyUpdateListeners()
         }
     }
-    
+  
+  public var value:[T]{
+    get{
+      return _value
+    }
+    set(value){
+      _value = value
+      alertChangedListeners()
+      alertAnyUpdateListeners()
+    }
+  }
+  
+  //DEPRECATED: use "value" instead
     public var internalArray:[T]{
         get{
-            return _internalArray
+            return value
         }
         set(value){
-            _internalArray = value
-            alertChangedListeners()
-            alertAnyUpdateListeners()
+            self.value = value
         }
     }
-    
-    public init(internalArray:[T] = []){
-        _internalArray = internalArray
+  
+    public init(value:[T] = []){
+        _value = value
         _changedListeners = Dictionary<NSObject, () -> Void>()
         _indexChangedListeners = Dictionary<NSObject, (indexChanged:Int) -> Void>()
         _anyUpdateListeners = Dictionary<NSObject, (() -> Void)>()
@@ -66,7 +76,7 @@ public class BindableArray<T> : PBindableCollection{
     }
     
     public func removeAtIndex(index:Int) -> T{
-        let value = _internalArray.removeAtIndex(index)
+        let value = _value.removeAtIndex(index)
         
         alertChangedListeners()
         alertAnyUpdateListeners()
@@ -75,25 +85,25 @@ public class BindableArray<T> : PBindableCollection{
     }
     
     public var count:Int{
-        return _internalArray.count
+        return _value.count
     }
     
     public func append(newElement:T){
-        _internalArray.append(newElement)
+        _value.append(newElement)
         
         alertChangedListeners()
         alertAnyUpdateListeners()
     }
     
     public func append(newElements:[T]){
-        _internalArray.splice(newElements, atIndex: _internalArray.count)
+        _value.splice(newElements, atIndex: _value.count)
         
         alertChangedListeners()
         alertAnyUpdateListeners()
     }
     
     public func splice(newElements:[T], atIndex:Int){
-        _internalArray.splice(newElements, atIndex: atIndex)
+        _value.splice(newElements, atIndex: atIndex)
         
         alertChangedListeners()
         alertAnyUpdateListeners()
@@ -140,7 +150,7 @@ public class BindableArray<T> : PBindableCollection{
     }
     
     public func removeAll(keepCapacity:Bool = false){
-        _internalArray.removeAll(keepCapacity: keepCapacity)
+        _value.removeAll(keepCapacity: keepCapacity)
         
         alertChangedListeners()
         alertAnyUpdateListeners()
