@@ -24,7 +24,7 @@ class BindableValue_PerformanceTests: XCTestCase {
         owners.append(currentOwner)
         
         testValue.addChangeListener(currentOwner, alertNow: false, listener: {value in
-          println("DEBUG: Did Execute")
+          print("DEBUG: Did Execute")
         })
       }
       

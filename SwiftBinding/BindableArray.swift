@@ -96,14 +96,14 @@ public class BindableArray<T> : PBindableCollection{
     }
     
     public func append(newElements:[T]){
-        _value.splice(newElements, atIndex: _value.count)
+        _value.insertContentsOf(newElements, at: _value.count)
         
         alertChangedListeners()
         alertAnyUpdateListeners()
     }
     
     public func splice(newElements:[T], atIndex:Int){
-        _value.splice(newElements, atIndex: atIndex)
+        _value.insertContentsOf(newElements, at: atIndex)
         
         alertChangedListeners()
         alertAnyUpdateListeners()

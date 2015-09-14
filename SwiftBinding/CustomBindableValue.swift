@@ -32,7 +32,7 @@ public class CustomBindableValue<ValueType>:BindableValue<ValueType>{
   }
   
   public override init(value: ValueType) {
-    println("WARNING: the init(value:ValueType) method should not be used when using CustomBindableValue...this will be removed in a future version.")
+    print("WARNING: the init(value:ValueType) method should not be used when using CustomBindableValue...this will be removed in a future version.")
     
     super.init(value: value)
   }

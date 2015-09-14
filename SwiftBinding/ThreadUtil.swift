@@ -14,7 +14,7 @@ internal class ThreadUtil{
     let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
     
     dispatch_async(backgroundQueue, {
-      var taskResult = task()
+      let taskResult = task()
       
       dispatch_async(dispatch_get_main_queue(), { () -> Void in
         completion?(taskResult)

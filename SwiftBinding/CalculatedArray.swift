@@ -31,13 +31,13 @@ public extension BindableArray{
     })
   }
   
-  public func map<ValueType, NewValueType>(filterValue: PUpdateable, mapFunction: (T) -> NewValueType) -> CalculatedArray<NewValueType>{
+  public func map<NewValueType>(filterValue: PUpdateable, mapFunction: (T) -> NewValueType) -> CalculatedArray<NewValueType>{
     return CalculatedArray(boundValues: [self, filterValue], calculator: {
       return self.internalArray.map({mapFunction($0)})
     })
   }
   
-  public func map<ValueType, NewValueType>(filterValues: [PUpdateable], mapFunction: (T) -> NewValueType) -> CalculatedArray<NewValueType>{
+  public func map<NewValueType>(filterValues: [PUpdateable], mapFunction: (T) -> NewValueType) -> CalculatedArray<NewValueType>{
     return CalculatedArray(boundValues: [self] + filterValues, calculator: {
       return self.internalArray.map({mapFunction($0)})
     })

@@ -21,7 +21,7 @@ class BindableArrayTests: XCTestCase {
     }
     
     func test_append() {
-        var test = BindableArray<String>()
+        let test = BindableArray<String>()
         
         var callCount = 0
         
